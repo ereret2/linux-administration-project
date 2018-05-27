@@ -1,6 +1,7 @@
 import os
 import stat
 from pwd import getpwuid
+import time
 
 #Author: Zhu Botong
 #tested under WSL(Ubuntu 18.04)
@@ -61,8 +62,15 @@ def getFilePermission_str(path):
 def getFileOwner(path):
     return getpwuid(os.stat(path).st_uid).pw_name
 
+def getFileModifiedTime(path):
+    return time.ctime(os.stat(path).st_mtime)
+
+def getFileCreatedTime(path):
+    return time.ctime(os.stat(path).st_ctime)
+
 if __name__ == "__main__":
     path = os.getcwd() + "/getProperties.py"
     print(getFilePermission_str(os.getcwd()))
     print(os.stat(path))
     print(getFileOwner(path))
+    print(getFileModifiedTime(path))
