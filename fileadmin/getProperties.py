@@ -10,7 +10,7 @@ def getCurrentPath():
     return os.getcwd()
 
 def getFilePermission_oct(path):
-    #
+    #it should look like this : 644
     return oct(os.stat(path).st_mode & 0o777)
 
 def getFilePermission_str(path):
