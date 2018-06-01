@@ -25,3 +25,7 @@ class FileOperator:
     def copy(self, path, tar_path):
         os.system('cp {p} {t_p}'.format(p=path, t_p=tar_path))
 
+if __name__ == "__main__":
+    path = os.getcwd() + "/getProperties.py"
+    fo = FileOperator()
+    fo.remove(os.getcwd()+"/new2.py")
