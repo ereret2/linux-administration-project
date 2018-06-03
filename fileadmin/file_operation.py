@@ -5,10 +5,12 @@ class FileOperator:
     def __init__(self):
         pass
 
+    def create_file(self, dir, filename):
+        result = os.system('touch {d}/{f_n}'.format(d=dir, f_n=filename))
+    
     def move(self, path, tar_path):
         result = os.system('mv {p} {t_p}'.format(p=path, t_p=tar_path))
         
-
     def rename(self, path, new_name):
         self.move(path=path, tar_path=new_name)
 
